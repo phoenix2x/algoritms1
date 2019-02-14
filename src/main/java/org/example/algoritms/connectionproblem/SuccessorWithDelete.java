@@ -28,7 +28,7 @@ public class SuccessorWithDelete {
     public int delete(int x) {
         LOGGER.info(Arrays.deepToString(data));
         if(x == 0 || (x == data.length -1)) {
-            LOGGER.info("cant remove first or last");
+            LOGGER.info("cant removeMin first or last");
         } else {
             data[x - 1][1] = data[x][1];
             data[x + 1][0] = data[x][0];

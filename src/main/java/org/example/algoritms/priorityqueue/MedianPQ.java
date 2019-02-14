@@ -10,8 +10,8 @@ import java.util.*;
  * - compare with median to check target PQ
  * - insert into target PQ
  * - if sizes out of balanceIfNeeded - move item from bigger PQ to median and median to smaller PQ
- * remove
- * - remove median
+ * removeMin
+ * - removeMin median
  * - move top from smaller PQ to median
  */
 

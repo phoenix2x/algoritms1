@@ -88,7 +88,7 @@ public class Deque<Item> implements Iterable<Item> {
 		}
 		size--;
 		return result.getData();
-	}                // remove and return the item from the front
+	}                // removeMin and return the item from the front
 	public Item removeLast() {
 		if(tail == null) {
 			throw new NoSuchElementException();
@@ -102,7 +102,7 @@ public class Deque<Item> implements Iterable<Item> {
 		}
 		size--;
 		return result.getData();
-	}                 // remove and return the item from the end
+	}                 // removeMin and return the item from the end
 	public Iterator<Item> iterator() {
 		return new Iterator<Item>() {
 			private Node<Item> current = head;

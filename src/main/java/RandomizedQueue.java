@@ -60,14 +60,14 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 			resize(size / 2);
 		}
 		return item;
-	}                    // remove and return a random item
+	}                    // removeMin and return a random item
 	public Item sample() {
 		if(size == 0) {
 			throw new NoSuchElementException();
 		}
 		int index = StdRandom.uniform(size);
 		return data[index];
-	}                     // return a random item (but do not remove it)
+	}                     // return a random item (but do not removeMin it)
 	public Iterator<Item> iterator() {
 		return new Iterator<Item>() {
 			Item[] shuffledData = shuffle(data);

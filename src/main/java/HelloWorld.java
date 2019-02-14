@@ -8,7 +8,10 @@ import io.vavr.Tuple2;
 import io.vavr.collection.HashMap;
 import io.vavr.collection.Map;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Stack;
 
 public class HelloWorld {
@@ -41,14 +44,82 @@ public class HelloWorld {
 //        API.For(map1, map2)
 //                .yield((entry1, entry2) -> Tuple.of(entry1._2(), entry2._2()))
 //                .forEach(entry -> System.out.println(entry));
+//        Test1 test1 = new Test1();
+
+        int[] arr = new int[]{1,2,3};
+        int[] arr2 = arr.clone();
+        System.out.println(arr.toString() + arr2.toString());
+        System.out.println(Arrays.toString(arr) + Arrays.toString(arr2));
 
 
+        BigDecimal b =  new BigDecimal("1.00");
+        b.compareTo(b);
+
+//        String.CASE_INSENSITIVE_ORDER
+
+//                Integer.compare()
+
+        Comparator<Test1> comparator = Comparator.comparingInt(Test1::getInt);
+
+        BigDecimal one = new BigDecimal("1.0");
+
+        BigDecimal eleven = new BigDecimal("10.0");
+
+        BigDecimal oneEleventh = one.divide(eleven);
+
+        System.out.println(oneEleventh);
+
+        double a = 1.0/10.0;
+
+        double result = 0.0;
+        System.out.println(a);
+
+        for (int i = 0; i < 10; i++) {
+            result += a;
+        }
+
+        System.out.println(result);
+
+        int d = Integer.MIN_VALUE - 1;
+        System.out.println(d);
     }
 
-    private class Item<T> {
-        private T[] data;
-        public Item(int capacity) {
-            this.data = (T[]) new Object[capacity];
+//    private class Item<T> {
+//        private T[] data;
+//        public Item(int capacity) {
+//            this.data = (T[]) new Object[capacity];
+//        }
+//    }
+
+    public static class Test1 implements Cloneable{
+//        protected String getSome() {
+//            return "";
+//        }
+
+//        @Override
+//        protected Test1 clone() throws CloneNotSupportedException {
+//            return (Test1) super.clone();
+//        }
+
+        public int getInt() {
+            return 1;
         }
+
+        public Test1 getInstance() {
+            return new Test1();
+        }
+    }
+
+    public static class Test2 extends Test1 {
+//        @Override
+//        public String getSome() {
+//            return super.getSome();
+//        }
+
+        @Override
+        public synchronized Test2 getInstance() {
+            return new Test2();
+        }
+
     }
 }
